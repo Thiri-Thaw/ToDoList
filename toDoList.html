@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercises</title>
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 m-3 p-5">
+
+
+                    <!-- <h4 class="text-danger py-4"> <span class="bg-danger text-white">Click X!</span> to remove
+                        from
+                        list
+                    </h4> -->
+                </div>
+
+                <div class="col-md-10 ">
+                    <h1 class="text-info py-3">To Do List (JQuery)</h1>
+                    <!-- <h5 class="text-secondary py-2"> <span class="bg-success text-white">Click on
+                            List</span> to
+                        mark as
+                        Done
+                    </h5> -->
+                    <hr>
+                    <div class="row  ">
+                        <div class="col">
+                            <input type="text" class="form-control border-warning " id="input">
+                        </div>
+                        <div class="col">
+                            <button type="reset" class="btn btn-outline-success add mr-4 px-3">Add</button>
+                        </div>
+                    </div>
+                    <div id="list"></div>
+                </div>
+
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            // function for enter
+            $( document ).ready( function ()
+            {
+                $( '#input' ).keyup( function ( e )
+                {
+                    if ( e.which == 13 )
+                    {
+                        var text = $( '#input' ).val();
+                        if ( text.length !== 0 )
+                        {
+                            var close = '<div class="py-2  ">' + '<div class="row">' + '<div class="col form-control border border-info div">' + text + '</div>' + '<div class="col">' + '<a class="close btn btn-outline-danger px-4">X</a>' + '</div>' + '</div >';
+
+                            $( '#list' ).append( close );
+                            $( '#input' ).val( '' );
+                        }
+                    }
+                    $( ".div" ).click( function ()
+                    {
+                        $( this ).css( "background", "#5bc0de" );
+                        $( this ).css( "color", "white" );
+                    } );
+                } );
+
+                $( "#list" ).on( "click", ".close", function ()
+                {
+                    $( this ).parent().parent().parent().fadeOut( 600 );
+                } );
+
+                // function for add-button
+                $( ".add" ).click( function ()
+                {
+                    var text = $( '#input' ).val();
+                    if ( text.length !== 0 )
+                    {
+                        var close = '<div class="py-2  ">' + '<div class="row">' + '<div class="col form-control border border-info div">' + text + '</div>' + '<div class="col">' + '<a class="close btn btn-outline-danger px-4">X</a>' + '</div>' + '</div >';
+
+                        $( '#list' ).append( close );
+                        $( '#input' ).val( '' );
+                    }
+                    $( ".div" ).click( function ()
+                    {
+                        $( this ).css( "background", "#5bc0de" );
+                        $( this ).css( "color", "white" );
+                    } );
+                } );
+
+                $( "#list" ).on( "click", ".close", function ()
+                {
+                    $( this ).parent().parent().parent().fadeOut( 600 );
+                } );
+                // $( "p" ).click( function ()
+                // {
+                //     $( this ).css( "background", "green" );
+                //     $( this ).css( "color", "white" );
+                // } );
+                // $( "p" ).dblclick( function ()
+                // {
+                //     $( this ).fadeOut( 1000 );
+                // } );
+                // $( ".add" ).click( function ()
+                // {
+
+                //     var inp = $( "#input" ).val();
+                //     $( "#list" ).append( "<li >" + inp + "</li>" + "<br>" );
+                //     $( 'input[type="text"]' ).val( "" );
+                //     $( "li" ).click( function ()
+                //     {
+                //         $( this ).css( "background", "green" );
+                //         $( this ).css( "color", "white" );
+                //     } );
+                //     $( "li" ).dblclick( function ()
+                //     {
+                //         $( this ).fadeOut( 1000 );
+                //     } );
+                // } );
+            } );
+        </script>
+
+    </body>
+
+</html>
